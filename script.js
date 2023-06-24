@@ -4,10 +4,16 @@ function hint2(){
 }
 function hint3(){
 }
+
+window.addEventListener('load', () => {timer()})
 function timer() {
-    let time = document.getElementById("timer").textContent
-    while (Number(time) != Number(0)) {
-        setTimeout(() => document.getElementById("timer").textContent = Number(time), 1000)
-        time = Number(time) - 1
-    }
+    let alltime = 3
+    let myinterval = setInterval(() => {
+        alltime = alltime - 1
+        document.getElementById("timer").textContent = alltime
+        if (alltime <= 0){
+            document.getElementById("timer").textContent = "Вы проиграли!"
+            clearInterval(myinterval)
+        }
+    },1000)
 }
