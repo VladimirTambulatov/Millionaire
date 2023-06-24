@@ -7,7 +7,7 @@ function hint3(){
 
 window.addEventListener('load', () => {timer()})
 function timer() {
-    let alltime = 3
+    let alltime = 60
     let myinterval = setInterval(() => {
         alltime = alltime - 1
         document.getElementById("timer").textContent = alltime
