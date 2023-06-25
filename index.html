@@ -5,7 +5,6 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<script src="script.js"></script>
 <body>
 <div class="wrap">
     <div id="timer">60</div>
@@ -15,7 +14,7 @@
         <div id="hint3" class="round-style" onclick="hint3()"><p>ПОМОЩЬ ЗАЛА</p></div>
     </div>
     <div class="questions">
-        <h3 class="question">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb?</h3>
+        <h3 id="question" class="question">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb?</h3>
         <div class="answers">
             <input class="answer-input" type="radio" name="answer" id="answer1" value="0">
             <label for="answer1" class="answer">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</label><br>
@@ -26,7 +25,7 @@
             <input class="answer-input" type="radio" name="answer" id="answer4" value="3">
             <label for="answer4" class="answer">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</label><br>
         </div>
-        <input type="button" class="btn" value="ПОДТВЕРДИТЬ">
+        <input id="button" type="button" class="btn" value="ПОДТВЕРДИТЬ" onclick="jopa">
     </div>
 
 
@@ -80,4 +79,5 @@
     </table>
 </div>
 </body>
+<script src="script.js"></script>
 </html>
