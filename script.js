@@ -172,7 +172,8 @@ function timer() {
 }
 function start(){
     for (let task of questions){
-        if (do_task(task) == false){
+        let result = do_task(task)
+        if (result == false){
             alert("Вы проиграли!")
         }
     }
@@ -185,10 +186,17 @@ function do_task({question, answers, correct}) {
         label.textContent = answers[i]
         i++
     }
-    check()
+    let promise = new Promise((resolve, reject) => {
+        let res = check(correct)
+        if (res == true){
+            resolve(res)
+        }
+        else{
+            reject(res)
+        }
+    })
 }
 function check(correct) {
-    if (document.getElementById("button").pressed) {
         let inp = document.getElementsByClassName('answer-input');
         for (let i = 0; i < inp.length; i++) {
             if (inp[i].type == "radio" && inp[i].checked && inp[i].getAttribute("value") == correct) {
@@ -196,7 +204,6 @@ function check(correct) {
             }
         }
         return false
-    }
 }
 
 start()
